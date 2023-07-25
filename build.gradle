@@ -38,3 +38,14 @@ gradlePlugin {
         }
     }
 }
+
+publishing {
+    publications {
+        pluginPublication(MavenPublication) {
+            from components.java
+            groupId project.group
+            artifactId 'greeting'
+            version project.version
+        }
+    }
+}
