@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'java-gradle-plugin'
     id 'maven-publish'
-    id "com.jfrog.artifactory" version "5.0.3"
 }
 
 group 'org.example'
@@ -49,14 +48,4 @@ artifactory {
             publishIvy = true
         }
     }
-    // Redefine basic properties of the build info object
-    def date = new Date().toString()
-    clientConfig.setIncludeEnvVars(true)
-    clientConfig.setEnvVarsExcludePatterns('*password*,*secret*')
-    clientConfig.setEnvVarsIncludePatterns('*not-secret*')
-    clientConfig.info.addEnvironmentProperty('test.adding.dynVar', date)
-    clientConfig.info.setBuildName('MTS-Metric-Gradle-Plugin')
-    clientConfig.info.setBuildNumber(date)
-    clientConfig.timeout = 20
-    clientConfig.setInsecureTls(true)
 }
