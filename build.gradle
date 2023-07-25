@@ -2,8 +2,6 @@ plugins {
     id 'java'
     id 'java-gradle-plugin'
     id 'maven-publish'
-    id "com.jfrog.artifactory" version "5.0.3"
-
 }
 
 group 'org.example'
@@ -40,14 +38,14 @@ gradlePlugin {
     }
 }
 
-artifactory {
-    publish {
-        defaults {
-            publications(publishing.publications.names.toArray(String[]::new))
-            publishBuildInfo = true
-            publishArtifacts = true
-            publishPom = true
-            publishIvy = true
-        }
-    }
-}
+//artifactory {
+//    publish {
+//        defaults {
+//            publications(publishing.publications.names.toArray(String[]::new))
+//            publishBuildInfo = true
+//            publishArtifacts = true
+//            publishPom = true
+//            publishIvy = true
+//        }
+//    }
+//}
