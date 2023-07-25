@@ -38,21 +38,3 @@ gradlePlugin {
         }
     }
 }
-
-
-publishing {
-    repositories {
-        maven {
-            credentials {
-                username 'giang62'
-                password 'Khongbietdau1@@'
-            }
-            url 'https://repo.repsy.io/mvn/giang62/bxg'
-        }
-    }
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-}
