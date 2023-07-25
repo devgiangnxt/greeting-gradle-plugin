@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'java-gradle-plugin'
     id 'maven-publish'
+    id "com.jfrog.artifactory" version "5.0.3"
 }
 
 group 'org.example'
@@ -48,7 +49,6 @@ artifactory {
             publishIvy = true
         }
     }
-
     // Redefine basic properties of the build info object
     def date = new Date().toString()
     clientConfig.setIncludeEnvVars(true)
